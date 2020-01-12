@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="master">
+<head>
+<meta charset="UTF-8">
+<title>Student Update</title>
+</head>
+<body>
+	
+	<selection layout:fragment="content">
+		<form role="form" th:action="@{'/update/'} +${oldStudent.id}" method="post"
+			th:object="${oldStudent}">
+			<div class="form-group">
+				<label for="stuName">Student Name<input type="text" class="form-group" id="stuName" placeholder="Enter Student Name" th:field="*{stuName}" /></label>
+			</div>
+			
+			<div class="form-group">
+				<label for="stuPhone">Student Phone<input type="text" class="form-group" id="stuPhone" placeholder="Enter Student Phone" th:field="*{stuPhone}" /></label>
+			</div>
+			
+			<div class="form-group">
+				<label for="stuAddress">Student Address<input type="text" class="form-group" id="stuAddress" placeholder="Enter Student Address" th:field="*{stuAddress}" /></label>
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	
+	</selection>
+	
+	
+</body>
+</html>

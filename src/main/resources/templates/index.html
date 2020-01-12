@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorate="master">
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+</head>
+<body>
+
+	<section layout:fragment="content">
+
+		<a th:href="@{/addstudent}">Add New Student</a>
+
+		<div th:each="student : ${students}">
+			<p th:text="${student.stuName}"></p>
+			<p th:text="${student.stuPhone}"></p>
+			<p th:text="${student.stuAddress}"></p>
+			<a th:href="@{'/update/'} +${student.id}">Edit</a>
+			<a th:href="@{'/remove/'} +${student.id}">Delete</a>
+		</div>
+	</section>
+
+</body>
+</html>
